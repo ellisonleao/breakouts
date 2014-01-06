@@ -1,5 +1,6 @@
   enchant();
-  var game = new Game(320, 320);
+  var game = new Game(320, 416);
+  game.scale = 1;
 
   assets = [
     'resources/bg_prerendered.png',
@@ -13,10 +14,13 @@
   game.onload = function () {
     // Game code is written here
     var scene = new Scene();
-    var sprite = new Sprite(320, 320);
-    console.log(game.assets);
-    sprite.image = game.assets['resources/bg_prerendered.png'];
-    scene.addChild(sprite);
+    var bg = new Sprite(320, 416);
+    var logo = new Sprite(131, 200);
+    
+    bg.image = game.assets['resources/bg_prerendered.png'];
+    logo.image = game.assets['resources/logo.png'];
+    scene.addChild(bg);
+    scene.addChild(logo);
     game.pushScene(scene);
   };
 
