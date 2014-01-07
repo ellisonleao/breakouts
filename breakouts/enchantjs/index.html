@@ -4,14 +4,23 @@
   <meta charset="UTF-8">
   <title>Enchant.js - Breakouts</title>
   <style type="text/css">
-    body {
-      background: #000;
-      margin: 0px;
-      padding: 0px;
+    body , html{
+      margin: 0; 
+      padding: 0;
+      overflow: hidden; 
+      font-family: Arial; 
+      font-size: 20px;
+      background-color: black;
+    }
+    #enchant-stage {
+      cursor:none;
+      margin: 0 auto;
+      margin-top: 100px;
     }
   </style>
 </head>
 <body>
+  <div id="enchant-stage"></div>
 </body>
   <script type="text/javascript" src="lib/enchant.min.js"></script>
   <script type="text/javascript" src="js/game.js"></script>
