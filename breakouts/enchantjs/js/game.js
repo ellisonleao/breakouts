@@ -63,8 +63,32 @@ window.onload = function(){
       this.addChild(label1);
       this.addChild(label2);
       this.addEventListener('touchend', function(e){
-        game.pushScene(new GameOverScene());
+        game.pushScene(new GameplayScene());
       });
+    }
+  });
+
+  // Gameplay Scene
+  var GameplayScene = Class.create(Scene, {
+    initialize: function() {
+      var bg;
+      var counter;
+      var bricks;
+
+      Scene.apply(this);
+      game = Game.instance;
+
+      bg = new Sprite(320, 416);
+      bg.image = game.assets['resources/bg_prerendered.png'];
+
+      label = new Label("THE GAME");
+      label.x = stageWidth / 2 - 120;
+      label.y = stageHeight / 2 + 50;
+      label.color = "black";
+      label.font = "40px Arial";
+
+      this.addChild(bg);
+      this.addChild(label);
     }
   });
 
@@ -75,7 +99,6 @@ window.onload = function(){
       var label;
       var logo;
       var bg;
-
       Scene.apply(this);
       game = Game.instance;
 
@@ -100,4 +123,5 @@ window.onload = function(){
       });
     }
   });
+
 }
